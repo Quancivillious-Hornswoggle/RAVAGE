@@ -8,6 +8,8 @@ git clone https://github.com/Meta-bhsc/RAVAGE.git
 
 cd RAVAGE
 
+sudo chmod +x script.py
+
 pip install -r requirements
 
 to run: python RAVAGE.py
