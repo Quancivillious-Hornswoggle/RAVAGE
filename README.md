@@ -8,6 +8,6 @@
 
 `sudo pip install -r requirements.txt`
 
-`to run: _sudo_ python RAVAGE.py`
+`to run: sudo python RAVAGE.py`
 
 *SUDO IS NEEDED IN BOTH COMANDS*
