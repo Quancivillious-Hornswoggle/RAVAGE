@@ -1,14 +1,14 @@
 # RAVAGE a linux shell tool
 
 ## Directions:
-**paste commands in shell in order**,
+## paste commands in shell in order,
 
-git clone https://github.com/Meta-bhsc/RAVAGE.git
+## git clone https://github.com/Meta-bhsc/RAVAGE.git
 
-cd RAVAGE
+### cd RAVAGE
 
-sudo pip install -r requirements.txt
+### sudo pip install -r requirements.txt
 
-to run: sudo python RAVAGE.py
+### to run: sudo python RAVAGE.py
 
-*SUDO IS NEEDED IN BOTH COMANDS*
+## *SUDO IS NEEDED IN BOTH COMANDS*
