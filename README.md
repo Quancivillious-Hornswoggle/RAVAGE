@@ -11,5 +11,6 @@
 
 **to run: _sudo_ python RAVAGE.py**
 
-' *SUDO IS NEEDED IN BOTH COMANDS* '
+*SUDO IS NEEDED IN BOTH COMANDS*
 
+'text'
