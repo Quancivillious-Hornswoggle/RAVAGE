@@ -8,8 +8,8 @@ git clone https://github.com/Meta-bhsc/RAVAGE.git
 
 cd RAVAGE
 
-sudo chmod +x script.py
+sudo pip install -r requirements.txt
 
-pip install -r requirements
+to run: sudo python RAVAGE.py
 
-to run: python RAVAGE.py
+*SUDO IS NEEDED IN BOTH COMANDS*
