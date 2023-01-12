@@ -3,12 +3,12 @@
 ## Directions:
 **paste commands in shell in order,**
 
-**git clone https://github.com/Meta-bhsc/RAVAGE.git**
+`git clone https://github.com/Meta-bhsc/RAVAGE.git`
 
-**cd RAVAGE**
+`cd RAVAGE`
 
-**_sudo_ pip install -r requirements.txt**
+`sudo pip install -r requirements.txt`
 
-**to run: _sudo_ python RAVAGE.py**
+`to run: _sudo_ python RAVAGE.py`
 
-`*SUDO IS NEEDED IN BOTH COMANDS*`
+*SUDO IS NEEDED IN BOTH COMANDS*
