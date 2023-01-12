@@ -1,7 +1,6 @@
 # RAVAGE a linux shell tool
 
-## Directions:
-**paste commands in shell in order,**
+## Directions:paste commands in shell in order,
 
 `git clone https://github.com/Meta-bhsc/RAVAGE.git`
 
