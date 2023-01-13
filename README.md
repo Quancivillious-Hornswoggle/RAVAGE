@@ -11,3 +11,6 @@
 `to run: sudo python RAVAGE.py`
 
 *SUDO IS NEEDED IN BOTH COMANDS*
+
+(https://user-images.githubusercontent.com/89297040/212219260-444cdd06-4be5-4181-8052-2bdceef9548d.png)
+
