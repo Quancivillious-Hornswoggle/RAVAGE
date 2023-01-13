@@ -12,4 +12,4 @@
 
 *SUDO IS NEEDED IN BOTH COMANDS*
 
-![Kali Linux  Running  - Oracle VM VirtualBox 1_12_2023 5_28_51 PM](https://user-images.githubusercontent.com/89297040/212220753-fe0b19c9-0a91-4042-a7df-5c2f8b873b74.png)
+![RAVAGE_Preview](https://user-images.githubusercontent.com/89297040/212221472-c868be2d-e7fc-4ca7-ba1e-0b31df857155.png)
