@@ -12,5 +12,4 @@
 
 *SUDO IS NEEDED IN BOTH COMANDS*
 
-![RAVAGE_Preview](https://user-images.githubusercontent.com/89297040/212221472-c868be2d-e7fc-4ca7-ba1e-0b31df857155.png)
 ![RAVAGE_Preview](https://user-images.githubusercontent.com/89297040/212221975-cc916b0f-db0a-47d5-b09b-22dda400e61c.png)
