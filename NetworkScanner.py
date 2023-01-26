@@ -108,13 +108,13 @@ def Start():
 	print('██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████')
 	print(Fore.WHITE+'')
 	#
-	print(Fore.CYAN + 'a) Full Scan		b) Specific Scan')
+	print(Fore.CYAN + '1) Full Scan		2) Specific Scan')
 	print('')
-	selection = input(Fore.WHITE + 'What program is being run? >>> ')
+	selection = int(input(Fore.WHITE + 'What program is being run? >>> '))
 	#
-	if selection == 'a':
+	if selection == 1:
 		FullScan()
-	if selection == 'b':
+	if selection == 2:
 		SpecificScan()
-	elif (selection != 'a') or (selection != 'b'):
+	elif (selection != 1) or (selection != 2):
 		Start()
