@@ -5,7 +5,6 @@ import pandas as pd
 import colorama
 from colorama import Fore
 import sys
-sys.path.append('/home/ian/.local/lib/python3.10/site-packages')
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 bot = instaloader.Instaloader()
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -125,22 +124,22 @@ def Start():
 	print('░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█░░░░░░██░░░░░░░░░░█░░░░░░██░░░░░░█░░░░░░█████████░░░░░░░░░░░░░░█░░░░░░██░░░░░░░░░░█')
 	print('█████████████████████████████████████████████████████████████████████████████████████████████████████████████████')
 	print('')
-	print(Fore.CYAN + "a) Profile Details   b) Bio Email Finder   c) Top Search Result Finder   d) Post Download   e) Follower and Following Data Extracter  f) Main Menu")
+	print(Fore.CYAN + "1) Profile Details   2) Bio Email Finder   3) Top Search Result Finder   4) Post Download   5) Follower and Following Data Extracter  6) Main Menu")
 	#print(Fore.CYAN + "")
 	print('')
-	choice = input(Fore.WHITE + 'What program is being run? >>> ')
+	choice = int(input(Fore.WHITE + 'What program is being run? >>> '))
 	
-	if((choice == 'a')):
+	if((choice == 1)):
 		Profile()
-	elif((choice == 'b')):
+	elif((choice == 2)):
 		Email()
-	elif((choice == 'c')):
+	elif((choice == 3)):
 		TopSearch()
-	elif((choice == 'd')):
+	elif((choice == 4)):
 		PostDownload()
-	elif((choice == 'e')):
+	elif((choice == 5)):
 		FFExtracter()
-	elif((choice == 'f')):
+	elif((choice == 6)):
 		os.system('sudo python RAVAGE.py')
 	else:
 		Start()
