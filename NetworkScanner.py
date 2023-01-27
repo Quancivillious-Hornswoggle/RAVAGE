@@ -1,7 +1,9 @@
 import os
-from scapy.all import ARP, Ether, srp
+from scapy.all import *
 import colorama
 from colorama import Fore
+import subprocess
+import time
 
 addresses = []
 
@@ -17,24 +19,34 @@ def scan(ip_range):
 		clients.append({'ip': received.psrc, 'mac': received.hwsrc})
 	return clients
 	
-def Fullscan(subnet, time):		
+def Fullscan(subnet, time, interface):	
 	for i in range(1, 255):
-		ip_range = (subnet + '.' + str(i) + '.0/24')
-		print('Scanning Hosts on: ' + ip_range)
-		arp = ARP(pdst=ip_range)
-		ether = Ether(dst="ff:ff:ff:ff:ff:ff")
-		packet = ether/arp
+		ip_range = (subnet + "." + str(i) + ".1/24")
+		print(Fore.WHITE + 'Scanning Hosts on '+ Fore.RED + ip_range + Fore.MAGENTA)
+		new_mac = ("00:11:22:33:44:" + str(i))
+		new_ip = ("192.168.0." + str(i))
 
-# Send the packet on the network and receive the response
-		result = srp(packet, timeout=time, verbose=0)[0]
+		os.system("ifconfig " + interface + " down")
+		os.system("ifconfig " + interface + " hw ether " + new_mac)
+		os.system("ifconfig " + interface + " " + new_ip)
+		os.system("ifconfig " + interface + " up")
+		#os.system("arp -s " + new_ip + " " + new_mac)
 
-# Print the host IPs that responded
-		for sent, received in result:
-			addresses.append({'ip': received.psrc, 'mac': received.hwsrc})
+		send(ARP(op=2, pdst=new_ip, psrc=new_ip, hwdst="ff:ff:ff:ff:ff:ff", hwsrc=new_mac))
 
-	for client in addresses:
-		print(f"IP: {client['ip']}   MAC: {client['mac']}")
+		os.system("ifconfig " + interface + " promisc")
 
+		ans, unans = srp(Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst=ip_range), iface=interface, timeout=time)
+
+		results = []
+
+		for sent, received in ans:
+		    results.append({"ip": received.psrc, "mac": received.hwsrc})
+		    addresses.append({"ip": received.psrc, "mac": received.hwsrc})
+
+		# Print the results
+		for host in results:
+		    print(host)
 	
 def SpecificScan():
 	os.system('clear')
@@ -69,10 +81,12 @@ def FullScan():
 	os.system('clear')
 	address = input('Type in the first 6 numbers of the ip. EX 192.168  >>> ')
 	print('')
-	timeout = int(input('Type the amount of connection wait time for each host >>> '))
+	timeout = float(input('Type the amount of connection wait time for each host >>> '))
+	print('')
+	device = input('Type in the interface that you are using. EX wlan0 >>> ')
 	print('Scanning...')		
 	print('')
-	Fullscan(subnet = address, time = timeout)
+	Fullscan(subnet = address, time = timeout, interface = device)
 
 	choice = input('Would you like to save these to a file? y/n >>> ')
 	if(choice == 'y'):
