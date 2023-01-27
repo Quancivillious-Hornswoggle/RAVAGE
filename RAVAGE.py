@@ -9,6 +9,7 @@ import NetworkScanner
 import PortScanner
 import Sniffer
 import WebScraper
+import WifiFlooder
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def clear():
     os.system('clear')
@@ -76,24 +77,26 @@ def StartMenu():
 	print('█░░░░░░██░░░░░░░░░░█░░░░░░██░░░░░░█████░░░░░░█████░░░░░░██░░░░░░█░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█')
 	print('███████████████████████████████████████████████████████████████████████████████████████████████')
 	print('')
-	print(Fore.CYAN + "a) Email Spammer	b) Instagram Scraper	c) Phisher	d) Network Scanner 	e) Port Scanner		f) Packet Sniffer	g) Web Scraper")
+	print(Fore.CYAN + "1) Email Spammer	2) Instagram Scraper	3) Phisher	4) Network Scanner 	5) Port Scanner		6) Packet Sniffer	7) Web Scraper	 8) Wifi Flooder")
 	print('')
-	choice = input(Fore.WHITE + 'What program is being run? >>> ')
+	choice = int(input(Fore.WHITE + 'What program is being run? >>> '))
 
-	if((choice == 'a')):
+	if((choice == 1)):
    	    Function1()
-	elif((choice == 'b')):
+	elif((choice == 2)):
             InstaStats.Start()
-	elif((choice == 'c')):
+	elif((choice == 3)):
             os.system('python3 maxphisher.py')
-	elif((choice == 'd')):
+	elif((choice == 4)):
 	    NetworkScanner.Start()
-	elif((choice == 'e')):
+	elif((choice == 5)):
 	    Function3()
-	elif((choice == 'f')):
+	elif((choice == 6)):
 	    Function2()
-	elif((choice == 'g')):
+	elif((choice == 7)):
 	    Function4()
+	elif((choice == 8)):
+	    WifiFlooder.Start()
 	else:
             StartMenu()
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------                        
