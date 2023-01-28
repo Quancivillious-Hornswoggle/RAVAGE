@@ -6,7 +6,7 @@ Directions: paste commands in shell in order
 
 `cd RAVAGE`
 
-`sudo pip install -r requirements.txt`
+`sudo python Setup.py`
 
 `to run: sudo python RAVAGE.py`
 
