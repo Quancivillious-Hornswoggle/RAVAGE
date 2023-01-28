@@ -47,7 +47,7 @@ def Start():
 		if counter >= 256:
 			counter = 0
 			
-		if ((counter % 100) == 1):
+		if ((counter % 100) == 0):
 			new_mac = ("00:11:22:33:44:" + str(i))
 			new_ip = ("192.168.0." + str(counter))
 			os.system("ifconfig " + interface + " down")
