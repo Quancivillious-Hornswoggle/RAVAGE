@@ -2,7 +2,6 @@ import os
 import colorama
 from colorama import Fore
 from scapy.all import *
-import time
 
 def DrawMenu():
 	print(Fore.BLUE + '██████████████████████████████████████████████████████████████████████████████████████████████████████████████')
@@ -33,17 +32,29 @@ def Start():
 	os.system('clear')
 	DrawMenu()
 	print('Sending ' + str(amount) + ' packets\n')
+	
+	new_mac = ("00:11:22:33:44:55")
+	new_ip = ("192.168.0.0")
+	os.system("ifconfig " + interface + " down")
+	os.system("ifconfig " + interface + " hw ether " + new_mac)
+	os.system("ifconfig " + interface + " " + new_ip)
+	os.system("ifconfig " + interface + " up")
+	
+	counter = 0
+	
 	for i in range(0, amount + 1):
-		counter = 0
 		counter = counter + 1
 		if counter >= 256:
 			counter = 0
-		new_mac = ("00:11:22:33:44:" + str(i))
-		new_ip = ("192.168.0." + str(counter))
-		os.system("ifconfig " + interface + " down")
-		os.system("ifconfig " + interface + " hw ether " + new_mac)
-		os.system("ifconfig " + interface + " " + new_ip)
-		os.system("ifconfig " + interface + " up")
+			
+		if ((counter % 100) == 1):
+			new_mac = ("00:11:22:33:44:" + str(i))
+			new_ip = ("192.168.0." + str(counter))
+			os.system("ifconfig " + interface + " down")
+			os.system("ifconfig " + interface + " hw ether " + new_mac)
+			os.system("ifconfig " + interface + " " + new_ip)
+			os.system("ifconfig " + interface + " up")
+			print('\n Info Changed \n')
 
 		print(Fore.MAGENTA + "Packet #" + str(i) + " is being sent\n")
 		
