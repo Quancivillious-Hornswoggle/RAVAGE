@@ -68,4 +68,6 @@ def Start():
 		sendp(packet, iface=interface)
 		
 	print(Fore.WHITE + '\nDone!')
+	input(Fore.RED+"Press Enter to continue...")
+	os.system('sudo python RAVAGE.py')
 		
