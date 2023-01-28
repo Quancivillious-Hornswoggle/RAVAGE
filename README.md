@@ -28,6 +28,7 @@ Directions: paste commands in shell in order
 - Updated all of the letters to numbers in the selection menus
 - Added Wifi Flooder
 - Added Mac Address and IP Address changer when using the network full scan, and a wifi flooder
+- Added TOR proxy connection when running the tool
 ## NOTES
 - When using the wifi flooder make sure to get the mac address of the ip being flooded. The wifi flooder is meant to be used after using the network scanner
 
