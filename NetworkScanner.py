@@ -3,7 +3,6 @@ from scapy.all import *
 import colorama
 from colorama import Fore
 import subprocess
-import time
 
 addresses = []
 
@@ -25,7 +24,6 @@ def Fullscan(subnet, time, interface):
 		print(Fore.WHITE + 'Scanning Hosts on '+ Fore.RED + ip_range + Fore.MAGENTA)
 		new_mac = ("00:11:22:33:44:" + str(i))
 		new_ip = ("192.168.0." + str(i))
-
 		os.system("ifconfig " + interface + " down")
 		os.system("ifconfig " + interface + " hw ether " + new_mac)
 		os.system("ifconfig " + interface + " " + new_ip)
@@ -88,7 +86,7 @@ def FullScan():
 	print('')
 	Fullscan(subnet = address, time = timeout, interface = device)
 
-	choice = input('Would you like to save these to a file? y/n >>> ')
+	choice = input(Fore.WHITE + 'Would you like to save these to a file? y/n >>> ')
 	if(choice == 'y'):
 		print('Saving to file')
 		with open("IP_SAVED_DATA.txt", "a") as file:
