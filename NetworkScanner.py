@@ -20,7 +20,7 @@ def scan(ip_range):
 	return clients
 	
 def Fullscan(subnet, time, interface):	
-	for i in range(1, 255):
+	for i in range(1, 256):
 		ip_range = (subnet + "." + str(i) + ".1/24")
 		print(Fore.WHITE + 'Scanning Hosts on '+ Fore.RED + ip_range + Fore.MAGENTA)
 		new_mac = ("00:11:22:33:44:" + str(i))
