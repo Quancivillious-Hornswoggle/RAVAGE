@@ -19,16 +19,31 @@ def scan(ip_range):
 	return clients
 	
 def Fullscan(subnet, time, interface):	
+	counter = 0
+	
+	new_mac = ("00:11:22:33:44:55")
+	new_ip = ("192.168.0.0")
+	os.system("ifconfig " + interface + " down")
+	os.system("ifconfig " + interface + " hw ether " + new_mac)
+	os.system("ifconfig " + interface + " " + new_ip)
+	os.system("ifconfig " + interface + " up")
+	
 	for i in range(1, 256):
 		ip_range = (subnet + "." + str(i) + ".1/24")
 		print(Fore.WHITE + 'Scanning Hosts on '+ Fore.RED + ip_range + Fore.MAGENTA)
-		new_mac = ("00:11:22:33:44:" + str(i))
-		new_ip = ("192.168.0." + str(i))
-		os.system("ifconfig " + interface + " down")
-		os.system("ifconfig " + interface + " hw ether " + new_mac)
-		os.system("ifconfig " + interface + " " + new_ip)
-		os.system("ifconfig " + interface + " up")
-		#os.system("arp -s " + new_ip + " " + new_mac)
+		
+		counter = counter + 1
+		if counter >= 256:
+			counter = 0
+
+		if ((counter % 100) == 0):
+			new_mac = ("00:11:22:33:44:" + str(i))
+			new_ip = ("192.168.0." + str(counter))
+			os.system("ifconfig " + interface + " down")
+			os.system("ifconfig " + interface + " hw ether " + new_mac)
+			os.system("ifconfig " + interface + " " + new_ip)
+			os.system("ifconfig " + interface + " up")
+			print('\n Info Changed \n')
 
 		send(ARP(op=2, pdst=new_ip, psrc=new_ip, hwdst="ff:ff:ff:ff:ff:ff", hwsrc=new_mac))
 
