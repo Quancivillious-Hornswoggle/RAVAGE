@@ -20,6 +20,7 @@ def scan(ip_range):
 	
 def Fullscan(subnet, time, interface):	
 	counter = 0
+	mac = 0
 	
 	new_mac = ("00:11:22:33:44:55")
 	new_ip = ("192.168.0.0")
@@ -33,11 +34,16 @@ def Fullscan(subnet, time, interface):
 		print(Fore.WHITE + 'Scanning Hosts on '+ Fore.RED + ip_range + Fore.MAGENTA)
 		
 		counter = counter + 1
+		mac = mac + 1
+		
+		if mac >= 100:
+			mac = 1
+		
 		if counter >= 256:
 			counter = 0
 
 		if ((counter % 100) == 0):
-			new_mac = ("00:11:22:33:44:" + str(i))
+			new_mac = ("00:11:22:33:44:" + str(mac))
 			new_ip = ("192.168.0." + str(counter))
 			os.system("ifconfig " + interface + " down")
 			os.system("ifconfig " + interface + " hw ether " + new_mac)
