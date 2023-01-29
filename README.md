@@ -33,5 +33,3 @@ Directions: paste commands in shell in order
 - Added TOR proxy connection when running the tool
 ## NOTES
 - When using the wifi flooder make sure to get the mac address of the ip being flooded. The wifi flooder is meant to be used after using the network scanner
-
-![RAVAGE_Preview](https://user-images.githubusercontent.com/89297040/212221975-cc916b0f-db0a-47d5-b09b-22dda400e61c.png)
