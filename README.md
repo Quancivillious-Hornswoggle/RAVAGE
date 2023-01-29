@@ -6,7 +6,9 @@ Directions: paste commands in shell in order
 
 `cd RAVAGE`
 
-`sudo python Setup.py`
+`sudo apt install tor`
+
+`sudo `
 
 `to run: sudo python RAVAGE.py`
 
