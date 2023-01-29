@@ -42,3 +42,5 @@ Then now just run RAVAGE
 - Added TOR proxy connection when running the tool
 ## NOTES
 - When using the wifi flooder make sure to get the mac address of the ip being flooded. The wifi flooder is meant to be used after using the network scanner
+
+![Kali Linux  Running  - Oracle VM VirtualBox 1_29_2023 12_44_40 PM (2)](https://user-images.githubusercontent.com/89297040/215354861-382cf878-ecec-4553-8543-89ab40e5c642.png)
