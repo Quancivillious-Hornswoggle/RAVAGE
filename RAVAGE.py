@@ -42,7 +42,7 @@ def Function1():
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def Function2():
 	os.system('clear')
-	d = input('What is the name of the device capturing the packets? EX wlan1 >>> ')
+	d = input('What is the name of the device capturing the packets? EX wlan >>> ')
 	print('')
 	a = int(input('How many packets do you want to capture? >>> '))
 	Sniffer.Start(device = d, amount = a)
