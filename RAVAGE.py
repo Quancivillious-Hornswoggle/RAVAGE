@@ -42,7 +42,7 @@ def Function1():
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def Function2():
 	os.system('clear')
-	d = input('What is the name of the device capturing the packets? EX wlan >>> ')
+	d = input('What is the name of the device capturing the packets? EX wlan1 >>> ')
 	print('')
 	a = int(input('How many packets do you want to capture? >>> '))
 	Sniffer.Start(device = d, amount = a)
@@ -77,7 +77,7 @@ def StartMenu():
 	print('█░░░░░░██░░░░░░░░░░█░░░░░░██░░░░░░█████░░░░░░█████░░░░░░██░░░░░░█░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█')
 	print('███████████████████████████████████████████████████████████████████████████████████████████████')
 	print('')
-	print(Fore.CYAN + "1) Email Spammer	2) Instagram Scraper	3) Phisher	4) Network Scanner 	5) Port Scanner		6) Packet Sniffer	7) Web Scraper	 8) Wifi Flooder")
+	print(Fore.CYAN + "1) Email Spammer \t 2) Instagram Scraper \t 3) Phisher \t 4) Network Scanner \t 5) Port Scanner \t 6) Packet Sniffer \t 7) Web Scraper \t 8) Wifi Flooder \t 9) Stop TOR")
 	print('')
 	choice = int(input(Fore.WHITE + 'What program is being run? >>> '))
 
@@ -97,7 +97,10 @@ def StartMenu():
 	    Function4()
 	elif((choice == 8)):
 	    WifiFlooder.Start()
+	elif((choice == 9)):
+	    os.system('sudo service tor stop')
 	else:
             StartMenu()
-#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------                        
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+os.system('sudo tor')                       
 StartMenu()
