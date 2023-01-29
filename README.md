@@ -8,11 +8,11 @@ Directions: paste commands in shell in order
 
 `sudo apt install tor`
 
-`sudo `
+`sudo pip install -r requirements.txt`
 
 `to run: sudo python RAVAGE.py`
 
-*SUDO IS NEEDED IN BOTH COMANDS*
+*SUDO IS NEEDED IN ALL COMMANDS*
 ##
 
 ### Available Tools:
