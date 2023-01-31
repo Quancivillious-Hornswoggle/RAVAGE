@@ -18,7 +18,7 @@ def scan(ip_range):
 		clients.append({'ip': received.psrc, 'mac': received.hwsrc})
 	return clients
 	
-def Fullscan(subnet, time, interface):	
+def Fullscan(subnet, time, interface, frequency):	
 	counter = 0
 	mac = 0
 	
@@ -42,7 +42,7 @@ def Fullscan(subnet, time, interface):
 		if counter >= 256:
 			counter = 0
 
-		if ((counter % 100) == 0):
+		if ((counter % frequency) == 0):
 			new_mac = ("00:11:22:33:44:" + str(mac))
 			new_ip = ("192.168.0." + str(counter))
 			os.system("ifconfig " + interface + " down")
@@ -103,9 +103,12 @@ def FullScan():
 	timeout = float(input('Type the amount of connection wait time for each host >>> '))
 	print('')
 	device = input('Type in the interface that you are using. EX wlan0 >>> ')
+	print('')
+	Frequency = int(input('Type in how many packets should be sent till changing your IP and MAC >>> '))
+	print('')
 	print('Scanning...')		
 	print('')
-	Fullscan(subnet = address, time = timeout, interface = device)
+	Fullscan(subnet = address, time = timeout, interface = device, frequency = Frequency)
 
 	choice = input(Fore.WHITE + 'Would you like to save these to a file? y/n >>> ')
 	if(choice == 'y'):
