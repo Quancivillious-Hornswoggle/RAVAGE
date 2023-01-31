@@ -29,6 +29,8 @@ def Start():
 	amount = int(input('Enter The Amount of Packets you want sent >>> '))
 	print('')
 	interface = input('Type in the interface that you are using. EX wlan0 >>> ')
+	print('')
+	frequency = int(input('Type in how many packets should be sent till changing your IP and MAC >>> '))
 	os.system('clear')
 	DrawMenu()
 	print('Sending ' + str(amount) + ' packets\n')
@@ -47,7 +49,7 @@ def Start():
 		if counter >= 256:
 			counter = 0
 			
-		if ((counter % 100) == 0):
+		if ((counter % frequency) == 0):
 			new_mac = ("00:11:22:33:44:" + str(i))
 			new_ip = ("192.168.0." + str(counter))
 			os.system("ifconfig " + interface + " down")
