@@ -83,7 +83,7 @@ def SpecificScan():
 	if(choice == 'y'):
 		print('Saving to file')
 		with open("IP_SAVED_DATA.txt", "a") as file:
-			for client in adresses:
+			for client in clients:
 				file.write("IP: " + client["ip"])
 				file.write("   MAC: " + client["mac"] + '\n')
 				file.write("")
