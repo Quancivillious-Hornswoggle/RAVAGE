@@ -32,6 +32,7 @@ Directions: paste commands in shell in order
 - Added Mac Address and IP Address changer when using the network full scan, and a wifi flooder
 - Added TOR proxy connection when running the tool
 - Changed the TOR proxy to manually select it from menu
+- Added option in Network Scanner and Wifi Floder to change how many packets are sent till it changes your IP and MAC
 ## NOTES
 - When using the wifi flooder make sure to get the mac address of the ip being flooded. The wifi flooder is meant to be used after using the network scanner
 
