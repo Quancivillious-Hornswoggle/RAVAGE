@@ -98,9 +98,9 @@ def StartMenu():
 	elif((choice == 8)):
 	    WifiFlooder.Start()
 	elif((choice == 9)):
-	    os.system('sudo service tor stop')
+	    os.system('service tor stop')
 	else:
             StartMenu()
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-os.system('tor')                       
+os.system('service tor start')                       
 StartMenu()
