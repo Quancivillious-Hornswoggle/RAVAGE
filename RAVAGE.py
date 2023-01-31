@@ -77,7 +77,7 @@ def StartMenu():
 	print('█░░░░░░██░░░░░░░░░░█░░░░░░██░░░░░░█████░░░░░░█████░░░░░░██░░░░░░█░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█')
 	print('███████████████████████████████████████████████████████████████████████████████████████████████')
 	print('')
-	print(Fore.CYAN + "1) Email Spammer \t 2) Instagram Scraper \t 3) Phisher \t 4) Network Scanner \t 5) Port Scanner \t 6) Packet Sniffer \t 7) Web Scraper \t 8) Wifi Flooder \t 9) Stop TOR")
+	print(Fore.CYAN + "1) Email Spammer \t 2) Instagram Scraper \t 3) Phisher \t 4) Network Scanner \t 5) Port Scanner \t 6) Packet Sniffer \t 7) Web Scraper \t 8) Wifi Flooder \t 9) Start TOR \t 10) Stop TOR")
 	print('')
 	choice = int(input(Fore.WHITE + 'What program is being run? >>> '))
 
@@ -98,9 +98,10 @@ def StartMenu():
 	elif((choice == 8)):
 	    WifiFlooder.Start()
 	elif((choice == 9)):
+	    os.system('service tor start')
+	elif((choice == 10)):
 	    os.system('service tor stop')
 	else:
             StartMenu()
-#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-os.system('service tor start')                       
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------                       
 StartMenu()
