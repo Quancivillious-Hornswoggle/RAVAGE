@@ -14,15 +14,6 @@ Directions: paste commands in shell in order
 
 *SUDO IS NEEDED IN ALL COMMANDS*
 ## 
-### Error Fix:
-If you get the error saying b'liblibc.a' is not found run these two commands and then you should be able to run it
-
-`cd /usr/lib/x86_64-linux-gnu/`
-
-`sudo ln -s -f libc.a liblibc.a`
-
-Then now just run RAVAGE
-##
 
 ### Available Tools:
 
